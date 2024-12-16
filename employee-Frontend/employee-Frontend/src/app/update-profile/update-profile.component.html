@@ -1,0 +1,35 @@
+<div class="heading">
+    <div><h1>
+        Update Profile
+    </h1></div>
+    <div><mat-icon (click)="closeDialog()">close</mat-icon></div>
+</div>
+
+<div class="profile-update-div">
+    <table style="table-layout:fixed;">
+        <tr>
+            <td><b>Employee Name</b>:</td>
+            <td><input type="text" [(ngModel)]="user.name" /></td>
+        </tr>
+       
+        <tr>
+            <td><b>Email</b>:</td>
+            <td><input type="text" [(ngModel)]="user.email" disabled/></td>
+        </tr>
+
+        
+        <tr>
+            <td><b>Birth Date</b>:</td>
+            <input type="date" [(ngModel)]="user.birthdate" required >
+        </tr>
+        <tr>
+            <td><b>Password</b>:</td>
+            <td><input type="password" [(ngModel)]="user.password" /></td>
+        </tr>
+       
+    </table>
+    
+</div>
+<div class="center-div">
+    <button  class="submit-button" (click)="update()">Update</button>
+</div>

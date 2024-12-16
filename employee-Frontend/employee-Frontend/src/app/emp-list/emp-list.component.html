@@ -1,0 +1,28 @@
+<div class="main-content">
+    <div class="left-panel">
+      <div class="search-bar">
+        <input type="text" [(ngModel)]="searchText" (input)="onSearchInput($event)" placeholder="Search employee">
+      </div>
+      <!-- Display list of all users in a table -->
+      <table *ngIf="employee.length > 0">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>BirthDate</th>
+            <th>Operation</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let emp of employee">
+            <td>{{ emp.id }}</td>
+            <td>{{ emp.name }}</td>
+            <td>{{ emp.email }}</td>
+            <td>{{emp.birthdate}}</td>
+            <td><button (click)="deleteEmployee(emp.id)"><i class="fa fa-trash" aria-hidden="true"></i>&nbsp;Delete</button>&nbsp;&nbsp;<button (click)="updateEmployee(emp.id)"><i class="fa fa-pencil" aria-hidden="true"></i>&nbsp;Update</button></td>        </tr>
+        </tbody>
+      </table>
+      <div *ngIf="employee.length === 0">There is no any employee currently</div>
+    </div>
+    
